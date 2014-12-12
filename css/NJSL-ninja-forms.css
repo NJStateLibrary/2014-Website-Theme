@@ -1,0 +1,32 @@
+.ninja-forms-field-description {
+	display: block;
+	clear: both;
+	font-size: 0.8em;
+}
+.ninja-forms-all-fields-wrap .list-checkbox-wrap.label-left ul li,
+.ninja-forms-all-fields-wrap .list-radio-wrap.label-left ul li {
+	float: none;
+	clear: both;
+}
+
+.ninja-forms-field-error {
+	margin-top: 5px;
+	padding: 15px;
+	border-radius: 4px;
+    background-color: #F2DEDE;
+    border-color: #EBCCD1;
+    color: #A94442;
+}
+
+.ninja-forms-success-msg {
+    background-color: #DFF0D8;
+    border-color: #D6E9C6;
+    color: #3C763D;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+	.ninja-forms-field-error p, .ninja-forms-success-msg p {
+		margin-bottom: 0;
+	}

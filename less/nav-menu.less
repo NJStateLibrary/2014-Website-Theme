@@ -1,0 +1,132 @@
+/**
+ * Top navigation menu styles
+ */
+
+.topbar-nav {
+  display: none;
+}
+.navbar-inner {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: inherit;
+}
+
+nav {
+  background-color: @brightblue;
+  box-shadow: 1px 1px 1px #cccccc;
+  width: 100%;
+	li a {
+	  color: #fff;
+	  border-right: 1px solid #ccc;
+	}
+	li li a {
+	  border-right-width: 0;
+	}
+	
+}
+
+nav .sf-menu ul li {
+  background-color: @brightblue;
+  padding: 10px 15px;
+}
+nav .sf-menu li:hover,
+nav .sf-menu li.sfHover {
+  background-color: @brightgreen;
+}
+
+nav > div > .nav > li > a {
+
+	@media(max-width:995px) {
+		font-size: 0.9em;
+	}
+	@media(min-width:996px){
+		font-size: 1.2em;
+	}
+}
+nav > div > .nav > li > a:hover {
+  background-color: fade(@brightgreen, 75%);
+  color: #fff;
+}
+
+@media(max-width:767px){
+
+	.navbar-header {
+		background-color: @brightblue;
+		
+		.navbar-toggle {
+			margin-left: 10px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+		}
+		
+	}
+
+	#main-menu-collapse {
+		position: absolute;
+		top: 0;
+		left: -80%;
+		width: 80%;
+		bottom: 0;
+		z-index: 1000;
+
+		background-color: @brightblue;
+		padding: 0;
+	}
+	
+	#main-menu-collapse.nav-opened {
+		
+		.nav-justified>li>a {
+			margin-bottom: 0;
+			border-bottom: 1px solid #333;
+		}
+		
+		max-height: 100%;
+		
+		li a {
+			border-right: 0;
+			display: block;
+		}
+		
+		ul.children, ul.sub-menu {
+		
+			display: block;
+			background-color: @footer-bg;
+			list-style-type: none;
+			padding-left: 0;
+			margin-left: 0;
+			
+			a {
+				color: @link-color;
+			}
+			
+			li {
+				padding: 10px 15px;
+			}
+			
+			ul.children, ul.sub-menu {
+				display: none;
+			}
+		}
+		
+	}
+	
+	body.nav-opened {
+		position: relative;
+/*		left: 80%; */
+
+    -webkit-transform: translate3d(80%, 0, 0);
+    -moz-transform: translate3d(80%, 0, 0);
+    -ms-transform: translate3d(80%, 0, 0);
+    -o-transform: translate3d(80%, 0, 0);
+    transform: translate3d(80%, 0, 0);
+	}
+}
+
+@media(min-width:768px){
+
+	#main-menu-collapse {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}

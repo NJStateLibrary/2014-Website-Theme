@@ -1,0 +1,101 @@
+/**
+ * Color coding styles - for setting distinct colors per section
+ */
+
+@homepage_header_text:    #333;
+@homepage_header_opacity: 60%;
+
+/* for menus */
+
+.tagged-menu-hover {
+  background-color: @brightgreen;
+}
+
+.sf-menu {
+	
+	.programs-menu {
+		ul li {
+		  background-color: #425a7b;
+		}
+		ul li:hover,
+		ul li:focus {
+		  background-color: @brightgreen;
+		}
+	
+	}
+	
+	.collections-menu {
+		ul li {
+		  background-color: #467834;
+		}
+		ul li:hover,
+		ul li:focus {
+		  background-color: @brightgreen;
+		}
+	}
+	
+	.news-menu {
+		ul li {
+		  background-color: @brightgreen;
+		}
+		ul li:hover,
+		ul li:focus {
+		  background-color: @brightgreen;
+		}
+	}
+	
+	.about-menu {
+		ul li {
+		  background-color: @brightblue;
+		}
+		ul li:hover,
+		ul li:focus {
+		  background-color: @brightgreen;
+		}
+	}
+
+}
+
+
+/* for homepage blocks */
+
+.tagged-h4 {
+  border-left: 4px solid @brightblue;
+  margin-left: -5px;
+  margin-right: -10px;
+  margin-top: -2px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: @homepage_header_text;
+/*  	text-shadow: 1px 1px 1px #000; */
+}
+
+.programs-section h4 {
+	.tagged-h4;
+  border-color: #425a7b;
+  background-color: rgba(66, 90, 123, 0.3);
+}
+
+.collections-section h4 {
+	.tagged-h4;
+  border-color: #467834;
+  background-color: rgba(70, 120, 52, 0.3);
+}
+
+.news-section h4 {
+	.tagged-h4;
+  border-color: @brightgreen;
+  background-color: fade(@brightgreen, @homepage_header_opacity);
+}
+.about-section h4 {
+	.tagged-h4;
+  border-color: @brightblue;
+  background-color: fade(@brightblue, @homepage_header_opacity);
+}
+
+.news-section article, .programs-section article, .about-section article, .collections-section article {
+	h4 {
+		border: none;
+		background-color: inherit;
+	}
+}

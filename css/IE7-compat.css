@@ -1,0 +1,20 @@
+/* IE (6?) specific styles */
+#main-menu-collapse li, .nav-tabs li, .logo-list li { float: left; }
+#main-menu-collapse li a, .nav-tabs li a, .logo-list li a {
+	padding: 10px;
+}
+#main-menu-collapse li ul { /** Prevent JS runaway with html5.js */
+	display: none;
+}
+
+.crafty-social-buttons-list li { float: right; }
+
+#search-form { width: 400px; }
+#search-form .form-group{ float: left; }
+
+.tab-pane {        display: none; }
+.tab-pane.active { display: block; }
+
+.carousel-control, .carousel-indicators { display: none; }
+
+img, div { behavior: url("/wp-content/themes/NJSL/css/iepngfix.htc") }

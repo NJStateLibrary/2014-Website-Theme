@@ -1,0 +1,510 @@
+
+/** Style definitions */
+
+@brightblue:#4867d6;
+@brightgreen: #93e425;
+@darkblue:#002048;
+@darkgreen:#389e28;
+
+@menu-text-size: 1em;
+@main-font: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
+
+/** Role definitions */
+
+/** Default page background -- overridden by code in functions.php */
+@page-bg: fade(@darkgreen,10%);
+@page-bg: #eaf5e9;		/** Same as above, but IE8 compatible */
+
+/** Styles for content and home page boxes */
+@panel-bg:     #fff;
+@panel-border: #ddd;
+
+@footer-bg: fade(@brightgreen,30%);
+@footer-bg: #d4ecb3;		/** Same as above, but IE8 compatible */
+
+@footer-text:  @darkblue;
+@contact-text: @darkblue;
+
+@link-color: fade(#1d2e81,80%);
+@link-color: #1435ad;	/** Same as above, but IE8 compatible */
+
+/** Rules */
+
+body {
+  font-family: @main-font;
+  background-size: 100%;
+  background-color: @page-bg;
+}
+
+/**
+ * Setup HW accelerated rendering on mobile devices
+ */
+@media(max-width:767px) {
+	body {
+		background-position: center 20px;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		-webkit-transition: -webkit-transform 500ms ease;
+		-moz-transition: -moz-transform 500ms ease;
+		-o-transition: -o-transform 500ms ease;
+		transition: transform 500ms ease;
+	}
+}
+
+a,
+a:hover,
+.btn-link {
+	color: @link-color;
+}
+h4 {
+	font-weight: bold;
+  
+	a {
+		color: #333;
+	}
+}
+
+/** Add signifier to external links */
+@media screen {
+	a:after {
+		font-family: FontAwesome;
+		content: "\00a0\f08e";
+		font-size: 0.7em;
+	}
+	
+	a[name]:after,
+	a[href^="#"]:after,
+	a[href^="http://desktop"]:after,
+	a[href^="http://www.njstatelib"]:after,
+	a[href^="https://www.njstatelib"]:after,
+	a[href^="/"]:after {
+		content: none;
+	}
+}
+/**
+ * Only show targets for links in page body when printing
+ */
+@media print {
+	a:after {
+		content: none;
+	}
+	
+	div.entry-content a[href]:after {
+		content: " (" attr(href) ") ";
+	}
+	
+	div.crafty-social-buttons a[href]:after,
+	div.breadcrumbs a[href]:after {
+		content: none;
+	}
+	
+}
+
+.crafty-social-buttons-list a:after,
+.social-media-list a:after,
+ul.logo-list a:after {
+	content: none;
+}
+
+.container {
+	padding: 0;
+}
+main {
+	background-color: #f0f0f0;
+	min-height: 800px;
+	border: 1px solid #ccc;
+	border-top-width: 0;
+	border-bottom-width: 0;
+}
+	main .home-page-row+.home-page-row>div {
+		top: -10px;
+	}
+
+@media(max-width:767px) {
+	main .row {
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: -5px;
+		padding-right: -5px;
+	}
+	
+	.container .navbar-header {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.col-md-11 {
+	margin: 0 auto;
+}
+
+@media(max-width:767px) {
+	.col-md-12 {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.header-logo {
+	margin: 0 auto;
+}
+
+@import 'nav-menu.less';
+@import 'footer.less';
+@import 'color-coding.less';
+@import 'wp-alignment.less';
+
+.btn-primary,
+.btn-primary:hover {
+	background-color: @brightblue;
+	border-width: 0;
+	box-shadow: 1px 1px 1px #ccc;
+}
+
+#content nav {
+	background: none;
+	text-align: center;
+	box-shadow: none;
+
+	.pagination {
+		margin: 20px auto;
+	}
+	
+	li a {
+		color: @link-color;
+		border: 0;
+	}
+	
+}
+	
+
+/**
+ * Contact panel styles
+ */
+#contact-us-panel {
+	background-color: @panel-bg;
+	border: 1px solid @panel-border;
+	padding: 1px 10px 5px 5px;
+	color: @contact-text;
+}
+#contact-us-panel table {
+	margin-bottom: 4px;
+}
+	#contact-us-panel address {
+		margin-bottom: 0;
+	}
+
+@media(max-width:767px) {
+	#contact-us-panel table {
+		font-size: 0.8em;
+	}
+}
+
+/**
+ * Home page styles
+ */
+section {
+	background-color: @panel-bg;
+}
+section#search-panel {
+	background-color: inherit;
+}
+
+@media(max-width:767px) {
+	#search-panel a.accordion-toggle {
+		display: block;
+	}
+}
+
+.homepage-box {
+	
+	border: 1px solid #ddd;
+	padding: 1px 10px 5px 5px;
+	
+	.row {
+		margin-left: 0;
+	}
+	.row > div {
+		margin-left: 0px;
+		padding: 5px;
+	}
+	h4 {
+		padding-left: 10px;
+	}
+	
+}
+
+/**
+ * Adjust boxes to give some room around the edges
+ */
+
+.home-page-col section {
+	margin-bottom: 10px;
+}
+
+@media(max-width:991px) {
+
+	.home-page-col {
+		padding-top: 10px;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+}
+
+@media(min-width:992px){
+
+	.home-page-col {
+		padding-top: 10px;
+		margin-left: 10px;
+		margin-right: -10px;
+	}
+	.home-page-col+.home-page-col {
+		margin-right: 10px;
+		margin-left: -10px;
+	}
+
+}
+
+@media(max-width:767px) {
+	.home-page-col {
+		padding-top: 10px;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+/**
+ * Search panel styles
+ */
+section#search-panel {
+	background-color: inherit;
+}
+
+.search-tab {
+
+	.nav > li > a {
+	  border: 1px solid #eee;
+	  border-bottom-width: 0;
+	}
+	
+	.nav > li.active > a {
+	  border-color: @panel-border;
+	  border-bottom-width: 0;
+	}
+	
+	.tab-pane {
+		padding: 10px;
+		padding-top: 30px;
+		border: 1px solid @panel-border;
+		border-width: 0 1px 1px 1px;
+		min-height: 190px;
+		background-color: @panel-bg;
+	  
+		ul.list-inline {
+			margin-bottom: 0;
+		}
+	  
+	}
+
+	section {
+	  margin-top: 10px;
+	}
+
+
+}
+
+/**
+ * News box styles
+ */
+
+.event-box article {
+	padding: 0 5px;
+	min-height: 80px;
+	border-bottom: 1px solid #eee;
+}
+.news-box article h1,
+.event-box article h1 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+/**
+ * Notice box styles
+ */
+.notice-box article {
+	min-height: 0;
+	border-bottom-width: 0;
+	padding: 5px;
+	margin: 5px;
+	
+	h1 {
+		margin-top: 10px;
+		font-size: 1.1em;
+	}
+}
+
+.action-box {
+
+	.row {
+		margin-left: -5px;
+		margin-right: -10px;
+		margin-top: -2px;
+
+		div {
+			padding-top: 5px;
+			padding-bottom: 0;
+			min-height: 55px;
+			border-right: 1px solid @panel-border;
+			border-top: 1px solid @panel-border;
+		  
+			@media(min-width:996px){ 
+				height: 75px;
+			}
+		  
+			a {
+				display: block;
+			}
+			
+			a:after {
+				content: attr(title);
+				display: block;
+				font-family: @main-font;
+				font-size: 0.8em;
+				color: @darkblue;
+			}
+			
+		}
+		
+	}
+
+}
+
+.action-box div:last-child {
+	border-right-width: 0;
+}
+
+/**
+ * News carousel styles
+ */
+.carousel-inner {
+	padding-bottom: 20px;
+
+	h1 {
+		font-size: 1em;
+		font-weight: bold;
+	}
+	
+	.item {
+		height: 180px;
+
+		a.thumbnail {
+			float: left;
+			margin-right: 10px;
+			width: 250px;
+			height: 150px;
+			overflow: hidden;
+		}
+	  
+	}
+
+}
+
+.carousel-inner .item.next,
+.carousel-inner .item.active {
+	display: inline-block;
+}
+
+.carousel-control.left {
+	float: left;
+}
+.carousel-control.right {
+	float: right;
+}
+.carousel-control.left,
+.carousel-control.right {
+	background: none;
+	top: 180px;
+	opacity: 1;
+	color: @brightblue;
+}
+.carousel-indicators {
+	
+	bottom: -25px;
+
+	li {
+		border-color: @brightblue;
+	}
+	li.active {
+		background-color: @brightblue;
+	}
+
+}
+
+@media( max-width:767px ) {
+
+	.carousel-inner .item a.thumbnail {
+		float: none;
+	}
+
+	.carousel-inner .item {
+		height: 320px;
+	}
+	
+	.carousel-control.left, .carousel-control.right {
+		top: 320px;
+	}
+}
+
+.display-posts-listing {
+
+	.listing-item {
+	    clear: both;
+	}
+	
+	img {
+	    float: left;
+	    margin: 0 10px 10px 0;
+	}
+	
+}
+
+
+/**	Body content */
+.site-content {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding: 1px 10px 10px 10px;
+	background-color: @panel-bg;
+	box-shadow: 1px 2px 2px #999;
+	min-height: 300px;
+	
+	hr {
+		color: #333;
+		border-top: 2px solid #333;
+	}
+	
+}
+
+.search-content {
+	h1.entry-title {
+		font-size: 30px;
+	}
+}
+
+.post-thumbnail {
+	width: 150px;
+	float: left;
+	margin-right: 10px;
+}
+
+/**
+ * Color codes for social media sites - from brandcolors.net
+ */
+ .text-facebook { color: #3b5998; }
+ .text-twitter  { color: #55acee; }
+ .text-youtube  { color: #c4302b; }
+ .text-gplus    { color: #dd4b39; }
