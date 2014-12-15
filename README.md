@@ -28,6 +28,11 @@ Includes these libraries:
 * Superfish menus           -- http://users.tpg.com.au/j_birch/plugins/superfish/
 * Supposition               -- https://gist.github.com/joeldbirch/5371649
 
-This theme is licensed under the GPL v2 or later, and includes code from the WordPress twentyfourteen theme licensed under the GPL.
+This theme is licensed under the GPL v2 or later, and includes code from Automattic's twentyfourteen theme licensed under the GPL.
 
 Libraries included with this theme are licensed variously under MIT, GPL, LGPL, and/or APL.
+
+This theme is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.

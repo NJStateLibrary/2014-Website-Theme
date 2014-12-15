@@ -6,6 +6,7 @@
 include 'include/plugin.basic-facets.php';
 include 'include/plugin.breadcrumb-trail.php';
 include 'include/plugin.crafty-social-buttons.php';
+include 'include/plugin.njsl-databases.php';
 include 'include/plugin.the-events-calendar.php';
 
 /**
