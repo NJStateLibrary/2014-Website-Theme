@@ -59,7 +59,7 @@
 						<li><a href="http://www.jerseyconnect.net/">JerseyConnect</a></li>
 						<li><a href="http://njworks.org/">Job Seekers</a></li>
 						<li><a href="http://njlibrarychampions.org/">Library Champions</a></li>
-						<li><a href="http://marketing.njstatelib.org/">Library Marketing</a></li>
+						<li><a href="http://njsldirect.org/">Library Marketing</a></li>
 						<li><a href="http://outspokenlibrary.org/">Print Impaired</a></li>
 						<li><a href="http://njgrowsbiz.org/">Small Business</a></li>
 					</ul>
